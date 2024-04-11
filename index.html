@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signaturstyrker</title>
+    <link rel="stylesheet" href="CSS-stylesheet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/model.js"></script>
+    <script src="js/profileUpdateView.js"></script>
+    <script src="js/profileController.js"></script>
+    <script src="js/SignatureStrengthsInfoUpdateView.js"></script>
+    <script src="js/SignatureStrengthsInfoController.js"></script>
+    <script src="js/signatureStrengthListUpdateView.js"></script>
+    <script src="js/signatureStrengthListController.js"></script>
+    <script src="js/myTeamUpdateView.js"></script>
+    <script src="js/myTeamController.js"></script>
+    <script src="js/mainController.js"></script>
+    <script src="js/mainUpdateView.js"></script>
+    <script src="js/common.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      updateView();
+      function updateView() {
+        const page = model.app.currentPage;
+        if (page == null) updateViewMain();
+        else if (page == "profilePage") updateViewProfile();
+        else if (page == "infoPage") updateViewInfo();
+        else if (page == "listPage") updateViewList();
+        else if (page == "teamPage") updateViewTeam();
+      }
+    </script>
+  </body>
+</html>
